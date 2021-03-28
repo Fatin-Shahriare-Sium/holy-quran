@@ -1,0 +1,762 @@
+@font-face {
+    font-family:icon-surah;
+    src:url(https://cdn.qurancdn.com/assets/surah_names/surah_names-e5d677784e8d3b9e2aa39ce4e1c7c139b4974c508ea8a6ab8e23e2541cebacb8.eot);
+    src:url(https://cdn.qurancdn.com/assets/surah_names/surah_names-e5d677784e8d3b9e2aa39ce4e1c7c139b4974c508ea8a6ab8e23e2541cebacb8.eot?#iefix) format("embedded-opentype"),
+    url(https://cdn.qurancdn.com/assets/surah_names/surah_names-bdedc92b995e92e0b783e2c49aff5efa41d77f93da975fcb52e8bcc30f304c0e.woff2) format("woff2"),
+    url(https://cdn.qurancdn.com/assets/surah_names/surah_names-72e41f0a6278536569f15f5c9c3691be164dcf28711da2dd7abf3b1e964a11f3.woff) format("woff"),
+    url(https://cdn.qurancdn.com/assets/surah_names/surah_names-b44bca9a268fd4c4fce216028111da2568d3c58d56e211238f8cef420da72337.ttf) format("truetype"),
+    url(https://cdn.qurancdn.com/assets/surah_names/surah_names-bfe5026d51aa3c0ae2d8c139823fd09caee76258f9bc69dc4ba2575c750b7da8.svg#surah_names) format("svg")
+   }
+
+   @font-face {
+    font-family:bismillah;
+    src:url(https://cdn.qurancdn.com/assets/bismillah/bismillah-549e158d5b6487312b3012bebc8a9e8373ab47fe59c0addf5f6b354e084c6110.woff2),
+    url(https://cdn.qurancdn.com/assets/bismillah/bismillah-ea3a26c47922e4b140b100daf2e19beea114e295e89e6bfa71fc04731ff26da4.eot?#iefix) format("embedded-opentype"),
+    url(https://cdn.qurancdn.com/assets/bismillah/bismillah-d9a9025689ce35726e3472c240cf846829f469519d5d5f68b5a189e4b3ad7aec.woff) format("woff"),
+    url(https://cdn.qurancdn.com/assets/bismillah/bismillah-ce8e4b2cf44ab8709fbe90189a9cb54b6a4dc31eb8ab7f6ae68a6403d58b9b69.ttf) format("truetype"),
+    url(https://cdn.qurancdn.com/assets/bismillah/bismillah-fe942e2d133ab63cf8e33fb921007b8ffab0048656a8f34bfdc9161966257651.svg#bismillah) format("svg");
+    font-weight:400;
+    font-style:normal;
+    font-display:swap
+   }
+
+html{
+    font-size: 66.25%
+}
+body {
+    --fontSize:7.5rem;
+    min-height: 100vh;
+}
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+.data:hover:before{
+    content: attr(data-log);
+    font-size: 1.7rem;
+    position: absolute;
+    /* top:13%; */
+    margin-bottom: 2%;
+    background-color: black;
+    color: white;
+    display: flex;
+    border: 2px solid black;
+    /* width: 300px; */
+    text-align: center;
+    width: max-content;
+    z-index: 1;
+    transform: translateY(-61%);
+    transform-origin: bottom;
+    transition: 155ms transform;
+}
+.body{
+    overflow-x:hidden;
+}
+.ayah-container p{
+font-size: 3rem;
+color: white;
+}
+.data:hover{
+color: green;
+}
+.ayah{
+    border-radius: 7%;
+    color: red;
+   height: 20px;
+    word-spacing: 30px;
+}
+.ayah-container p{
+    font-family: 'Mirza', cursive;
+
+}
+.ayah-container .ayah-end{
+    color: red;
+    position: relative;
+    padding-right: 20px;
+}
+.ayah-container .ayah-end::after{
+    content: '\06DD';
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 52%;
+    left: 25%;
+    color: black;
+
+}
+.tools .tools-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 50%; */
+    /* margin: auto 0px; */
+   
+}
+.tools {
+   
+    margin: auto 0px;
+    
+}
+.tools .tools-flex .tools-play{
+    padding: 37px 0px;
+}
+ .ayath-shower{
+    background-color: rgb(26,30,27);
+    height:auto;
+}
+.ayah-container-transilition{
+    display: flex;
+    color: white;
+    flex-wrap: wrap;
+  
+}
+.ayah-container-transilition p{
+    font-size: 1.5rem;
+}
+.ayah-container-transilition::before{
+   content:'—';
+   margin-top: .1%;
+
+ 
+}
+.ayah-container-wrapper .ayah-container{
+    flex-wrap: wrap-reverse;
+   margin-top: 3%;
+
+   word-break:break-all;
+   display: flex;
+   
+}
+.ayah-container-wrapper .ayah-container p{
+    margin-left: auto;
+ }
+
+
+ .surah-shower{
+     border: 2px solid black;
+     height: auto;
+     background-color: black;
+     height: 130px;
+     position: relative;
+ }
+ .surah-shower .surah-shower_name{
+     position: relative;
+     transform: translateY(50%);
+ }
+ .surah-shower .surah-shower_name h3{
+   font-size: 2rem;
+   font-weight: bold;
+   color: white;
+}
+ .surah-shower .surah-shower_name p{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(105, 233, 105);
+}
+.surah-shower::before{
+    content: attr(id);
+    color: white;
+    position: absolute;
+    font-size: 1.5rem;
+    border-bottom-right-radius: 25px;
+    background-color: rgb(43, 146, 243);
+    transform: translateX(-50%);
+   width: 32px;
+}
+ .surah-container{
+    margin-left: 7%;
+}
+.surah-shower  .surah-shower_name_arabic{
+   position: absolute;
+   left: 87%;
+   top: 17%;
+   transform: translate(-50%,-50%);
+   display: flex;
+}
+.surah-shower  .surah-shower_name_arabic p{
+    font-size: 3rem;
+    font-family: bismillah !important;
+    word-break: break!important;
+}
+.button-controller{
+    display: flex;
+    margin: 0px auto;
+    
+}
+.button-controller .button-controller_align{
+    margin: 0px auto;
+}
+.loader{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: rgba(
+        28, 30, 28 ,.3);
+        z-index: 1;
+}
+.container-all__navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 11vh;
+    z-index: 3000;
+}
+.container-all__navbar__back--color{
+    /* background-color:#32c3ea; */
+    background-color: #05c1f4;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.container-all__navbar--surah-info{
+    margin-right: 5%;
+}
+.container-all__navbar--current-surah {
+    position: relative;
+    cursor: pointer;
+    margin-left: 3%;
+}
+.container-all__navbar--current-surah::after{
+    content: '';
+    position: absolute;
+    transform: rotate(405deg);
+    border-top: 15px solid transparent;
+    border-left: 20px solid transparent;
+    border-bottom: 20px solid green;
+    cursor: pointer;
+    top: -2%;
+    left: 125%;
+
+}
+.container-all__bismillah{
+    height:300px;
+    color: white;
+    font-size: 5rem;
+    font-family:  bismillah !important;
+}
+.container-all__bismillah .container-all__bismillah--holder{
+    
+    /* margin-top: 13%; */
+    padding-top: 137px;
+    
+}
+.container-all__tabs {
+    
+    z-index: 10;
+    position: absolute;
+    left: 1%;
+    top: 13%;
+    
+   background-color:#95908d;
+ 
+}
+.container-all__tabs .container-all__tabs--container{
+   position: relative;
+   overflow: hidden;
+    margin: 0px auto;
+}
+/* .container-all__tabs .container-all__tabs--container{
+    color: red;
+} */
+.container-all__tabs input{
+    width: 277px;
+    height: 9vh;
+    border-radius: 25px;
+  margin-left: 2%;
+  top: 20%;
+ 
+    border: 2px solid black;
+    text-align: center;
+    
+}
+.container-all__tabs input[type=text]{
+    font-size: 2rem;
+    color: black;
+
+}
+.container-all__tabs .container-all__tabs--container {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 500px;
+    width: 300px;
+    
+
+}
+
+.container-all__tabs--container--name{
+    background-color:  #d3d3d3  ;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    margin: 2% 0px;
+}
+.container-all__tabs--container--name:hover{
+    background-color: rgb(0, 0, 0);
+}
+.container-all__tabs--container--name a{
+    
+    margin: 0px auto;
+    font-size: 2rem;
+    text-align: center;
+   
+    color: #18a6c3;
+    background-color:#958d8d;
+    text-decoration: none;
+}
+.container-all__navbar--current-surah .controller_capter-info p:nth-child(1){
+    font-size: 1.7rem;
+    color: white;
+    font-weight: bold;
+}
+.container-all__navbar--current-surah .controller_capter-info p:nth-child(2){
+    color: #f11717 ;
+    font-size: 1.5rem;
+}
+.container-all__navbar--verses{
+    font-size: 1.7rem;
+    position: relative;
+    color:  #456067 ; 
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 5%;
+
+}
+.container-all__navbar--verses::after{
+    content: '';
+    position: absolute;
+    transform: rotate(405deg);
+    border-top: 15px solid transparent;
+    border-left: 20px solid transparent;
+    border-bottom: 20px solid green;
+    cursor: pointer;
+    top: -37%;
+    left: 137%;
+
+}
+.container-all__navbar--surah-info--modal{
+    border: 2px solid black;
+    font-size: 2rem;
+    padding: 7px;
+    border-radius: 27px;
+}
+.modal-content{
+    margin-top: 40%;
+}
+.verses-details--container .scroll{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 400px;
+    width: 300px;
+}
+.verses-details--container{
+    position: absolute;
+    
+    height: 500px;
+    width: 310px;
+    top: 11%;
+    z-index: 10000;
+    left: 40%;
+    background-color:  #d3d3d3  ;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    margin: 2% 0px;
+    border-radius: 2px;
+   
+    
+}
+.verses-details--container input{
+    width: 295px;
+    height: 50px;
+    border:2px solid black;
+    border-radius: 23px;
+    margin-right: 1%;
+    margin: 2px auto;
+
+
+}
+.verses-details--container input[type=text]{
+    color: #18a6c3 ;
+    font-size: 2rem;
+    text-align: center;
+}
+.verses-details--container .verses-details a{
+    margin: 0px auto;
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+    color: #18a6c3;
+    background-color:#958d8d;
+    text-decoration: none;
+}
+.verses-details--container .verses-details{
+    border: 2px solid black;
+    border-radius: 3px;
+    margin: 3px auto;
+    background-color:#18a6c3 ;
+}
+.verses-details--container .verses-details:hover{
+    background-color: black;
+}
+.home-nav{
+    height: 11vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(45deg, #000000 33%, #3f87a6 63%);
+}
+.home-nav p{
+    font-size: 2.3rem;
+    color: white;
+    font-weight: bold;
+    margin-left: 2%;
+}
+.home-nav .home-nav_list{
+    margin-right: 3%;
+    width: 300px;
+   
+    
+}
+.home-nav .home-nav_list a{
+    border: 3px solid black;
+    border-radius: 12px;
+    margin-left: 1%;
+    padding: 0px 2px;
+    color: black;
+    text-decoration: none;
+    font-size: 2.3rem;
+}
+.home-nav .home-nav_list a:hover{
+    color:  #00f538;
+    background-color: white;
+}
+.active{
+   
+    position:absolute;
+    top: 11%;
+    
+   
+    display: flex!important;
+    flex-direction: column;
+    z-index: 1;
+     background-color: red;
+    height: 100%;
+}
+.active a{
+    text-align: center;
+   margin: 20px 0px;
+}
+
+.home-nav--burger{
+    font-size: 2rem;
+    margin-right: 5%;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+.surah-container__input{
+    width: 600px;
+    display: flex;
+    margin-top: 3%!important;
+}
+.surah-container__icon-search{
+    color: red;
+    background-color: black;
+    color: white;
+   
+    width: 20px;
+    font-size: 1.3rem;
+}
+.surah-container__icon-search i{
+  margin-top: 43%;
+    margin-left: 8%;
+}
+.surah-container__input input{
+    width: 70%;
+    height: 30px;
+    border: 3px solid black;
+}
+.surah-container__input input[type='text']{
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.surah-info__text h2{
+    font-size: 3rem;
+    text-align: center;
+    color:  #096889;
+    letter-spacing: 2px;
+    font-weight: bolder;
+}
+.surah-info__text p{
+    font-size: 2rem;
+}
+.surah-info__text li{
+    font-size: 1.9rem;
+    margin-left: 2%;
+}
+.surah-info__start{
+    display: flex;
+    justify-content: space-between;
+   margin: 30px auto;
+   align-items: center;
+   height: 10vh;
+   color: white;
+   background-color: black;
+}
+.surah-info__start h3{
+    margin-right: 3%;
+}
+surah-container__input
+.surah-info__start h1{
+    margin-left: 3%;
+}
+.surah-info__start h2{
+    margin-left: 3%;
+}
+.surah-info__start h1,h2,h3{
+    font-size: 1.7rem;
+}
+.surah-info__start h3::before{
+    content: 'Revelation Place:';
+}
+.surah-info__start h3::first-letter{
+    text-transform: uppercase;
+}
+.credit{
+    position: relative;
+}
+.credit h2{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing:2px;
+    font-weight: bolder;
+   font-size: 2rem;
+   z-index: 10;
+   margin: 5px auto;
+}
+.credit h2::after{
+    content: '';
+
+    border: 2px solid green;
+    margin-left: 20px;
+    
+    width: 120px;
+}
+.credit-container p{
+    font-size: 2rem;
+    color: black;
+    font-weight: bold;
+}
+.footer{
+    margin-top: 10vh;
+    background-color: black;
+    height: 270px;
+    
+
+}
+
+
+.footer-container{
+    color: white;
+    font-size: 1.7rem;
+    font-weight: bolder;
+    text-align: center;
+   padding-top:7%;
+}
+.home-landingpage{
+    height: 89vh;
+    width: 100vw;
+    background:linear-gradient(to right,white 50%,black 50%);
+    position: relative;
+}
+.home-landingpage-font{
+    font-size: 4.5rem;
+    position: absolute;
+
+
+right: 55%;
+top: 23%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+text-transform: uppercase;
+line-height: 56px;
+
+color: #17E810;
+}
+.home-landingpage-light{
+    position: absolute;
+
+right: 50%;
+top: 40%;
+text-transform: uppercase;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: var(--fontSize);
+line-height: 112px;
+
+color: #000000;
+}
+.home-landingpage-dark{
+    position: absolute;
+
+
+left: 50%;
+
+top: 40%;
+text-transform: uppercase;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: var(--fontSize);
+line-height: 112px;
+
+color: #FFFFFF;
+}
+@media all and (max-width:930px){
+    body{
+        --fontSize:6rem;
+    }
+    .home-landingpage-font{
+        font-size: 4rem;
+        right: 53%;
+    }
+}
+@media all and (max-width:617px){
+    body{
+        --fontSize:5rem;
+    }
+    .home-landingpage-font{
+
+        font-size: 3.5rem;
+        right: 53%;
+    }
+}
+ @media all  and (max-width:770px){
+     html{
+         font-size: 55%;
+     }
+     .ayath-shower .tools .tools-flex{
+         display: flex;
+         flex-direction: row;
+         
+     }
+     .ayath-shower .tools .tools-flex .tools-play{
+        padding: 0px 3%;
+     }
+     .tools{
+        order: 3;
+        margin-top: auto;
+        
+     }
+     .surah-container{
+         margin-left: 0px;
+     }
+     .home-nav .home-nav_list{
+         display: none;
+        transform: translateX(394px);
+       
+         
+
+     }
+     .home-nav--burger{
+         display: block;
+
+        
+     }
+     .surah-container__input{
+         width: 500px;
+         margin-left: 20%!important;
+     }
+    /* body{
+        --fontSize:5rem;
+    } */
+    /* .home-landingpage-light{
+        left: 1%;
+    } */
+    .home-landingpage{
+        height: 70vh;
+    }
+    .home-landingpage-font{
+        top: 30%;
+    }
+ }
+ @media all and (max-width:500px){
+   .active{
+    transform: translateX(137px)!important; 
+     
+     } 
+    
+     .surah-container__input{
+        width: 500px;
+        margin-left: 5%!important;
+    }
+    body{
+        --fontSize:4rem;
+    }
+    .home-landingpage-font{
+        font-size: 2.9rem;
+        right: 50%;
+    }
+    /* .home-landingpage-font{
+        top: 40%;
+    } */
+    .verses-details--container{
+        left: 19%;
+    }
+    .tools-flex{
+        width: 50%;
+        justify-content: space-between!important;
+        margin: 0px auto;
+    }
+    
+ }
+ @media all and (max-width:390px){
+    .active{
+        transform: translateX(58px)!important;
+     
+     }
+     .surah-container__input{
+         width: 400px;
+         margin-top: 7%;
+     }
+     body{
+        --fontSize:3rem;
+    }
+    .home-landingpage-font{
+        font-size: 2rem;
+        right: 53%;
+    }
+    .home-landingpage{
+        display: none;
+    }
+    .verses-details--container{
+        left: 9%;
+    }
+    .footer{
+        height: 190px!important;
+    }
+    .button-controller{
+        width: auto!important;
+    }
+    .button-controller_align{
+        display: flex;
+        height: 50px;
+    }
+    .container-all__bismillah .container-all__bismillah--holder{
+       
+        width: 90%!important;
+        margin: auto auto!important;
+    }
+    
+ }
