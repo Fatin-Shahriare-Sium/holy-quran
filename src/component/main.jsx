@@ -14,7 +14,8 @@ let Mainx=()=>{
   let Actions={
         SET_DATA:'set-data',
         UPDATE_DATA:'update-data',
-        pageNum:'set-page-num',
+        pageNumIncrease:'set-page-num',
+        pageNumReduce:'page-reduce',
         SET_VERSE:'set-verse',
         SET_CHAPTER:'set-chapter',
         ALL_CHAPTER:'all_chapter',
@@ -34,10 +35,16 @@ let Mainx=()=>{
                 verseLength:action.payload.verseLength,
                 loading:action.payload.loading
             }
-        }else if(action.type===Actions.pageNum){
+        }else if(action.type===Actions.pageNumIncrease){
             return{
                 ...state,
                 currentPage:state.currentPage+1
+            }
+        }else if(action.type===Actions.pageNumReduce){
+
+            return{
+                ...state,
+                currentPage:state.currentPage>=0?state.currentPage-1:state.currentPage
             }
         }else if(action.type===Actions.SET_CHAPTER){
             return{
@@ -160,10 +167,10 @@ let Mainx=()=>{
 
     window.addEventListener('scroll',change)
     let next=()=>{
-        dispatch({type:Actions.pageNum})
+        dispatch({type:Actions.pageNumIncrease})
     }
     let pre=()=>{
-        dispatch({type:Actions.pageNum})
+        dispatch({type:Actions.pageNumReduce})
     }
 
     function versesKey(i){
