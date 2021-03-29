@@ -14,10 +14,10 @@ let SingleVerses=()=>{
             setInfo(res.data.data)
             
         })
-        setTimeout(() => {
-            setLoad(false)
-        }, 1000);
-        
+        // setTimeout(() => {
+           
+        // }, 1000);
+        setLoad(false)
     },[id])
     // useEffect(()=>{
     //     axios.get(`http://api.alquran.cloud/v1/ayah/${id}/en.asad`).then(res=>{
