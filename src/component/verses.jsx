@@ -10,7 +10,7 @@ let Verses=({verses})=>{
         arr.push(i)
     }
     setVersesx(arr)
-    },[])
+    },[verses])
     function filtered(){
       
         return versesx&& versesx.filter(sig=>sig.toString().toLowerCase().includes(search.toLowerCase()))

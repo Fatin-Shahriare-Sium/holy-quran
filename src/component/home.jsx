@@ -7,7 +7,14 @@ import Surah from './showSurah'
 let Home=()=>{
     
     let[loading,setLoading]=useState(true)
-    
+    useEffect(()=>{
+        window.addEventListener('resize',()=>{
+            console.log(window.innerWidth);
+            if(window.innerWidth>790){
+                dispatch({type:Actions.SET_SHOW,payload:false})
+            }
+        })
+    },[])
     let Actions={
         SET_Chapter:'set-chapter',
         SET_SHOW:'show',

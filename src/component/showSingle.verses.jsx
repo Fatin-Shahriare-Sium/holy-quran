@@ -7,12 +7,16 @@ let SingleVerses=()=>{
     let {id}=useParams()
     let [info,setInfo]=useState('')
     let[load,setLoad]=useState(true)
-    
+    let[text,setText]=useState('')
     useEffect(()=>{
-        axios.get(`https://api.quran.com/api/v4/verses/by_key/${id}?language=en&words=true&word_fields=text_uthmani`).then(res=>{
+        axios.get(`http://api.alquran.cloud/v1/ayah/${id}/ar.alafasy`).then(res=>{
             
-            setInfo(res.data.verse)
+            setInfo(res.data.data)
             console.log(res);
+        })
+        axios.get(`http://api.alquran.cloud/v1/ayah/${id}/en.asad`).then(res=>{
+            console.log(res.data.data.text);
+            setText(res.data.data.text)
         })
         setTimeout(() => {
             setLoad(false)
@@ -34,11 +38,11 @@ let SingleVerses=()=>{
                   <div className='col-md-2 tools '>
                       <div className='tools-flex'>
                           <div className='tools-key'>
-                              <p style={{color:'white'}}>{info.verse_key}</p>
+                              <p style={{color:'white'}}>{id}</p>
                           </div>
                           <div onClick={copying}  className='tools-play'>
                           <button data-clipboard-target="#need" className='btn btn-dark'>
-                          <i style={{fontSize:'43px',color:'white'}} class="fas fa-copy"></i>
+                          <i style={{fontSize:'43px',color:'white'}} className="fas fa-copy"></i>
                           </button>
                          
                           </div>
@@ -50,25 +54,20 @@ let SingleVerses=()=>{
                       </div>
                   </div>
                   <div className="col-md-10 ayah-container-wrapper">
-                      {
-                 <div id='ayath' style={{direction:'rtl'}} className='ayah-container'>{info.words.map(
-                  (sig,index)=>sig.char_type_name==='end'?<p id='need' key={index} className='ayah-end data' data-log={sig.translation.text}>{sig.text_uthmani}</p>:<span id={index}><p className='data' data-log={sig.translation.text}>{sig.text_uthmani}</p>
-                  </span>
-                 
-                 )}</div>
-              }
-  
-                   {
-                 <div className='ayah-container-transilition' style={{display:'flex',position:'relative'}}>{info.words.map(
-                  (sig,index)=>sig.char_type_name==='end'?'':<p key={index} className='px-1'>{sig.translation.text}</p>
-                  
-                 )}</div>
-              }
+                      
+                 <div id='ayath' style={{direction:'rtl'}} className='ayah-container'>
+                     <p>{info.text}</p>
+                  </div>
+
+                 <div className='ayah-container-transilition' style={{display:'flex',position:'relative'}}>
+                     <p>{text}</p>
+                </div>
+        
               
               <audio controls>
-                  <source src={`https://cdn.alquran.cloud/media/audio/ayah/ar.alafasy/${info.id}`} type="audio/mpeg"/>
+                  <source src={info.audio} type="audio/mpeg"/>
               </audio>
-            
+             
                   </div>
                   
               </div>

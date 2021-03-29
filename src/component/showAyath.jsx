@@ -26,7 +26,7 @@ let ShowAyath=(props)=>{
                             <p style={{color:'white'}}>{props.keyx}</p>
                         </div>
                         <div onClick={copying}  className='tools-play'>
-                        <i style={{fontSize:'30px',color:'white',cursor:'pointer'}} class="fas fa-copy" ></i>
+                        <i style={{fontSize:'30px',color:'white',cursor:'pointer'}} className="fas fa-copy" ></i>
                   
                         </div>
                         <div className='tools-share'>

@@ -1,4 +1,4 @@
-import React  from 'react'
+import React, { useEffect }  from 'react'
 import Mainx from './main'
 import Home from './home'
 import {BrowserRouter,Switch,Route} from 'react-router-dom'
@@ -7,8 +7,13 @@ import SingleVerses from './showSingle.verses'
 import SurahInfo from './surahInfo'
 import Credit from './credit'
 import Footer from './footer'
+import ReactGA from 'react-ga';
 
 let App=()=>{
+    useEffect(()=>{
+        ReactGA.initialize('G-7FZZV9PZKQ');
+ReactGA.pageview(window.location.pathname + window.location.search)
+    },[])
     return(
         
         <BrowserRouter>

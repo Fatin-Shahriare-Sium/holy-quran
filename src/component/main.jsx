@@ -139,7 +139,7 @@ let Mainx=()=>{
  },[Actions.ALL_CHAPTER, Actions.SET_ERROR])
 
    
-
+    
     function filterdChapter(){
         return state.all && state.all.filter((sig,index)=>sig.name_simple.toLowerCase().includes(searchValue.toLowerCase()) )
         
@@ -165,11 +165,6 @@ let Mainx=()=>{
     let pre=()=>{
         dispatch({type:Actions.pageNum})
     }
-   function reverseArr(i){
-        let revesed=state.data[i].words
-        return [...revesed].reverse()
-        
-     }
 
     function versesKey(i){
         return state.data[i].verse_key
@@ -181,7 +176,7 @@ let Mainx=()=>{
      }
    
     function toggleShow(){
-        if(!state.modal){
+        if(state.modal===false){
             dispatch({type:Actions.TOOGLEX,payload:!state.show})
             dispatch({type:Actions.SHOW_VERSES ,payload:false})
         }
@@ -190,11 +185,11 @@ let Mainx=()=>{
     }
 
     function toggleVerses(){
-        if(!state.modal){
+        if(state.modal===false){
             dispatch({type:Actions.TOGGLE_VERSES ,payload:!state.verses})
         dispatch({type:Actions.SET_SHOW,payload:false})
         }
-        
+        console.log('toggle');
     }
     let changeLanguage=(e)=>{
        
@@ -292,23 +287,11 @@ let Mainx=()=>{
                 
                 </div>
             </div>
-
-
-
-        
-
-
-
-
-
-
-
-
-
-           
+      
 {
+  
     state.loading? <Loading/>:
-     state.verseLength.map((i,index)=><ShowAyath key={index} data={reverseArr(i)} text={state.data} keyx={versesKey(i)} audiox={audiox(i)} index={i}/>)
+     state.verseLength.map((i,index)=><ShowAyath key={index} data={state.data[i].words} text={state.data} keyx={versesKey(i)} audiox={audiox(i)} index={i}/>)
 }
     <div className='button-controller w-50'>
     <div className='button-controller_align'>

@@ -26,6 +26,7 @@ html{
 body {
     --fontSize:7.5rem;
     min-height: 100vh;
+   overflow-x:hidden;
 }
 *{
     padding:0;
@@ -98,6 +99,17 @@ color: green;
     margin: auto 0px;
     
 }
+.tools-key{
+    background-color: white;
+    border-radius: 30px;
+
+}
+.tools-key p{
+    margin: auto 0px;
+    color: black!important;
+    font-weight: bold;
+    padding: 2px 2px;
+}
 .tools .tools-flex .tools-play{
     padding: 37px 0px;
 }
@@ -121,11 +133,10 @@ color: green;
  
 }
 .ayah-container-wrapper .ayah-container{
-    flex-wrap: wrap-reverse;
+   direction: rtl;
    margin-top: 3%;
-
-   word-break:break-all;
    display: flex;
+   flex-wrap: wrap;
    
 }
 .ayah-container-wrapper .ayah-container p{
@@ -249,9 +260,9 @@ color: green;
 .container-all__tabs {
     
     z-index: 10;
-    position: absolute;
+    position: fixed;
     left: 1%;
-    top: 13%;
+    top: 11%;
     
    background-color:#95908d;
  
@@ -261,9 +272,7 @@ color: green;
    overflow: hidden;
     margin: 0px auto;
 }
-/* .container-all__tabs .container-all__tabs--container{
-    color: red;
-} */
+
 .container-all__tabs input{
     width: 277px;
     height: 9vh;
@@ -354,11 +363,11 @@ color: green;
     width: 300px;
 }
 .verses-details--container{
-    position: absolute;
+    position: fixed;
     
     height: 500px;
     width: 310px;
-    top: 11%;
+    top: 9.7%;
     z-index: 10000;
     left: 40%;
     background-color:  #d3d3d3  ;
@@ -438,9 +447,9 @@ color: green;
    
     position:absolute;
     top: 11%;
-    
-   
-    display: flex!important;
+    display: none;
+    transition: all 0.5s ease;
+    /* display: flex!important; */
     flex-direction: column;
     z-index: 1;
      background-color: red;
@@ -514,7 +523,7 @@ color: green;
 .surah-info__start h3{
     margin-right: 3%;
 }
-surah-container__input
+
 .surah-info__start h1{
     margin-left: 3%;
 }
@@ -690,6 +699,10 @@ color: #FFFFFF;
     .home-landingpage-font{
         top: 30%;
     }
+    .active{
+        display: flex!important;
+        transition: all 0.5s ease;
+    }
  }
  @media all and (max-width:500px){
    .active{
@@ -723,7 +736,8 @@ color: #FFFFFF;
  }
  @media all and (max-width:390px){
     .active{
-        transform: translateX(58px)!important;
+        transform: translateX(61px)!important;
+        top: 11%;
      
      }
      .surah-container__input{
