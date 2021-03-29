@@ -9,11 +9,15 @@ let SingleVerses=()=>{
     let[load,setLoad]=useState(true)
     let[text,setText]=useState('')
     useEffect(()=>{
-        axios.get(`http://api.alquran.cloud/v1/ayah/${id}/ar.alafasy`).then(res=>{
+          axios.get(`http://api.alquran.cloud/v1/ayah/${id}/ar.alafasy`).then(res=>{
             
             setInfo(res.data.data)
-            console.log(res);
+            
         })
+      
+        
+    },[id])
+    useEffect(()=>{
         axios.get(`http://api.alquran.cloud/v1/ayah/${id}/en.asad`).then(res=>{
             console.log(res.data.data.text);
             setText(res.data.data.text)
@@ -26,7 +30,6 @@ let SingleVerses=()=>{
         let ayath=document.getElementById('ayath')
         copy(ayath.textContent)
         
-        console.log(ayath);
     }
   
     return(
