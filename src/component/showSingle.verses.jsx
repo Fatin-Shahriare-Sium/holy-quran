@@ -14,18 +14,18 @@ let SingleVerses=()=>{
             setInfo(res.data.data)
             
         })
-      
-        
-    },[id])
-    useEffect(()=>{
-        axios.get(`http://api.alquran.cloud/v1/ayah/${id}/en.asad`).then(res=>{
-            console.log(res.data.data.text);
-            setText(res.data.data.text)
-        })
         setTimeout(() => {
             setLoad(false)
         }, 1000);
+        
     },[id])
+    // useEffect(()=>{
+    //     axios.get(`http://api.alquran.cloud/v1/ayah/${id}/en.asad`).then(res=>{
+    //         console.log(res.data.data.text);
+    //         setText(res.data.data.text)
+    //     })
+       
+    // },[id])
     function copying(){
         let ayath=document.getElementById('ayath')
         copy(ayath.textContent)
@@ -62,9 +62,9 @@ let SingleVerses=()=>{
                      <p>{info.text}</p>
                   </div>
 
-                 <div className='ayah-container-transilition' style={{display:'flex',position:'relative'}}>
+                 {/* <div className='ayah-container-transilition' style={{display:'flex',position:'relative'}}>
                      <p>{text}</p>
-                </div>
+                </div> */}
         
               
               <audio controls>
