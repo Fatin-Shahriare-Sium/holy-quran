@@ -1,7 +1,8 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-## PROJECT UI
+## PROJECT URL
+https://holyquran.netlify.app
 ![picture]
 ## Available Scripts
 
