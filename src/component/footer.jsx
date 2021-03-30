@@ -6,7 +6,7 @@ let year=date.getFullYear()
     return(
         <div className='container-fluid footer'>
             <div className='footer-container'>
-            <p>All Rights Reserved By © holy-quran.netlify.app {year}</p>
+            <p>All Rights Reserved By © holyquran.netlify.app {year}</p>
 
             </div>
         </div>
