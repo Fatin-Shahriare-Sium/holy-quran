@@ -11,7 +11,10 @@ import ReactGA from 'react-ga';
 
 let App=()=>{
     useEffect(()=>{
-        ReactGA.initialize('G-7FZZV9PZKQ');
+        ReactGA.initialize('G-7FZZV9PZKQ',{
+            cookieFlags: 'max-age=7200;secure;samesite=none'
+        });
+       
 ReactGA.pageview(window.location.pathname + window.location.search)
     },[])
     return(
