@@ -17,7 +17,7 @@ let SurahInfo=()=>{
             setChapter(res.data.chapter)
             console.log(res.data.chapter);
         })
-    },[])
+    },[id])
    
     return(
         <div className='container-fluid surah-info'>
