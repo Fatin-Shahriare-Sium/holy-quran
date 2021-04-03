@@ -33,7 +33,8 @@ let Mainx=()=>{
                 ...state,
                 data:action.payload.data,
                 verseLength:action.payload.verseLength,
-                loading:action.payload.loading
+                loading:action.payload.loading,
+                
             }
         }else if(action.type===Actions.pageNumIncrease){
             return{
@@ -49,7 +50,8 @@ let Mainx=()=>{
         }else if(action.type===Actions.SET_CHAPTER){
             return{
                 ...state,
-                chapter:action.payload.chapter
+                chapter:action.payload.chapter,
+                currentPage:1
             }
         }else if(action.type===Actions.ALL_CHAPTER){
             return  {
