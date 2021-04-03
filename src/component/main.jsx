@@ -145,7 +145,7 @@ let Mainx=()=>{
         dispatch({type:Actions.SET_ERROR})
     })
     
- },[Actions.ALL_CHAPTER, Actions.SET_ERROR])
+ },[Actions.ALL_CHAPTER, Actions.SET_ERROR,id])
 
    
     
