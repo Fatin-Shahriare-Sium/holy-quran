@@ -143,7 +143,9 @@ color: green;
     margin-left: auto;
  }
 
-
+.ayah-container .ayah-end{
+    margin-top: 5px;
+}
  .surah-shower{
      border: 2px solid black;
      height: auto;
@@ -632,6 +634,21 @@ line-height: 112px;
 
 color: #FFFFFF;
 }
+
+.error-shower{
+    
+    justify-content: center;
+    align-items: center;
+}
+.error-shower img{
+   
+    width: 100%;
+
+}
+.error-shower .text h1{
+    font-weight: bold;
+}
+
 @media all and (max-width:930px){
     body{
         --fontSize:6rem;
@@ -732,7 +749,14 @@ color: #FFFFFF;
         justify-content: space-between!important;
         margin: 0px auto;
     }
-    
+    .error-shower .text{
+        order: 2;
+        text-align: center;
+        margin-top: 3%;
+    }
+    .footer{
+        height: 190px!important;
+    }
  }
  @media all and (max-width:390px){
     .active{
