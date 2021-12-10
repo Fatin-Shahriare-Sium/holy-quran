@@ -99,7 +99,7 @@ let Mainx=()=>{
         return state;
     }
 
-    let [state,dispatch]=useReducer(reducer,{currentPage:1,loading:true,show:false,verses:false,transLanguage:'de',modal:false})
+    let [state,dispatch]=useReducer(reducer,{currentPage:1,loading:true,show:false,verses:false,transLanguage:'en',modal:false})
 
     useEffect(()=>{
       return  axios.get(`https://api.quran.com/api/v4/verses/by_chapter/${id}?language=${state.transLanguage}&words=true&word_fields=text_uthmani&page=${state.currentPage}&per_page=10`).then(res=>
